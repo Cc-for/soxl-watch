@@ -1,39 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SOXL盯盘</title>
-<style>
-body{background:#0b101c;color:#fff;margin:0;padding:15px;font-family:system-ui}
-h2{text-align:center}
-.card{background:#151c2c;border-radius:10px;padding:15px;margin:12px 0}
-.ok{border:1px solid #22c55e}
-.no{border:1px solid #ef4444}
-button{width:100%;padding:12px;border:0;border-radius:8px;background:#2563eb;color:#fff;font-size:16px}
-</style>
-</head>
-<body>
-<h2>SOXL 三倍ETF盯盘台</h2>
-<div class="card"><h2 id="price">加载中...</h2></div>
-<div class="card ok"><p>✅ 支撑区间就绪</p></div>
-<div class="card no"><p>❌ 压力区间就绪</p></div>
-<div class="card">
-<p id="stat">连接服务器中...</p>
-<button onclick="run()">手动刷新</button>
-</div>
-<script>
-let pList=["https://api.allorigins.win/raw?url=","https://corsproxy.io/?"];
-let now=0;
-async function run(){
-try{
-let u=pList[now%pList.length]+encodeURIComponent("https://finance.yahoo.com/quote/SOXL");
-await fetch(u);
-document.getElementById("price").innerText="正常读取行情";
-document.getElementById("stat").innerText="✅ 在线正常";
-}catch(e){now++;document.getElementById("stat").innerText="切换线路重试";setTimeout(run,500);}
-}
-setInterval(run,30000);run();
-</script>
-</body>
-</html>
+SOXL Direxion 3x Semiconductor ETF
+--
+--
+近期最高：--
+近期最低：--
+数据源: Yahoo Finance | 更新: --
+后台校验: 等待运行
+短线T版(5日线ATR)
+波段版(2月箱体)
+大周期版(历史结构)
+
+动态ATR支撑
+--
+动态ATR压力
+--
+中期箱体边界
+--
+现价
+--
+手动刷新
+⚠️杠杆ETF风险极高：动态ATR=隔日T参考、箱体=波段参考、历史结构=大风控参考，不构成投资建议
